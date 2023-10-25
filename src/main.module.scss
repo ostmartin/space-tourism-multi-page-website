@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{
+    font-family: 'Barlow Condensed';
+    src: url('./fonts/BarlowCondensed-Regular.ttf') format('truetype')
+};
+
+@font-face{
+    font-family: 'Bellefair';
+    src: url('./fonts/Bellefair-regular.ttf') format('truetype')
+}
+
+
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%
+}
+
+.heading-1{
+    @apply font-bell text-h150 text-light;
+}
+
+.heading-2{
+    @extend .heading-1;
+    @apply text-h100;
+}
+
+.heading-3{
+    @extend .heading-1;
+    @apply text-h56;
+}
+
+.heading-4{
+    @extend .heading-1;
+    @apply text-h32;
+}
+
+.heading-5{
+    @extend .heading-1;
+    @apply text-h28 tracking-4.75 text-purple;
+}
+
+.sub-1{
+    @extend .heading-1;
+    @apply text-h28;
+}
+
+.sub-2{
+    @extend .sub-1;
+    @apply text-h14 tracking-2.35;
+}
+
+.nav-text{
+    @extend .sub-1;
+    @apply text-h16 tracking-2.7 uppercase;
+}

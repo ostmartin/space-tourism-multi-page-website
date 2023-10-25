@@ -1,0 +1,49 @@
+@import '../../../main.module.scss';
+
+.nav{
+    @apply container h-full w-fit;
+    
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.774227142333984px);
+}
+
+.navList{
+    @apply flex w-full px-28 gap-10;
+}
+
+.navItem{
+    @apply flex gap-2 align-text-top py-9;
+    @extend .nav-text;
+
+    cursor: pointer;
+    position: relative;
+
+    span{
+        font-weight: bold;
+    }
+
+    &::after{
+        content: '';
+        display: none;
+        background-color: #fff;
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        opacity: 0.5021;
+    }
+
+    &:hover{
+       &::after{
+        display: block;
+       } 
+    }
+
+    &.active{
+        &::after{
+         display: block;
+         opacity: 1;
+        } 
+     }
+}
