@@ -1,18 +1,18 @@
 @import '../../../main.module.scss';
 
 .nav{
-    @apply container h-full w-fit;
+    @apply container h-full min-w-[53%] w-fit;
     
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(40.774227142333984px);
 }
 
 .navList{
-    @apply flex w-full px-28 gap-10;
+    @apply flex w-full px-28;
 }
 
 .navItem{
-    @apply flex gap-2 align-text-top py-9;
+    @apply flex gap-2 align-text-top py-9 px-5;
     @extend .nav-text;
 
     cursor: pointer;
@@ -24,26 +24,52 @@
 
     &::after{
         content: '';
-        display: none;
         background-color: #fff;
-        width: 100%;
+        width: 0%;
         height: 3px;
         position: absolute;
         bottom: -1px;
-        left: 0;
-        opacity: 0.5021;
+        right: 50%;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    &::before{
+        content: '';
+        background-color: #fff;
+        width: 0%;
+        height: 3px;
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        opacity: 0;
+        transition: all 0.3s ease;
     }
 
     &:hover{
        &::after{
-        display: block;
+        width: 50%;
+        right: 0;
+        opacity: 0.5021;
+       }
+       
+       &::before{
+        width: 50%;
+        left: 0;
+        opacity: 0.5021;
        } 
     }
 
     &.active{
         &::after{
-         display: block;
-         opacity: 1;
-        } 
+            width: 50%;
+            right: 0;
+            opacity: 1;
+        }
+        &::before{
+            width: 50%;
+            left: 0;
+            opacity: 1;
+        }
      }
 }

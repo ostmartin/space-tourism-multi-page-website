@@ -1,4 +1,5 @@
 import Navigation from './Navigation';
+import Home from '../home/Home';
 
 import styles from './styles/mainPage.module.scss';
 import Logo from '../../assets/shared/logo';
@@ -14,7 +15,9 @@ const MainPage = () => {
                 </div>
                 <Navigation/>
             </div>
-            <div className="content-section"></div>
+            <div className="content-section">
+                <Home/>
+            </div>
         </div>
     )
 }

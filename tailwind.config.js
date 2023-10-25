@@ -20,7 +20,7 @@ export default {
       bell: ['Bellefair', 'serif']
     },
     letterSpacing: {
-      '4.75': '4.75px',
+      '4.725': '4.725px',
       '2.35': '2.35px',
       '2.7': '2.7px'
     },
@@ -30,6 +30,7 @@ export default {
       'h56': '56px',
       'h32': '32px',
       'h28': '28px',
+      'h18': '18px',
       'h16': '16px',
       'h14': '14px',
     },
