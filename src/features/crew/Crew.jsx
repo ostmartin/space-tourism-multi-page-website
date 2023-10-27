@@ -4,16 +4,10 @@ import Commander from './images/image-douglas-hurley.png';
 const Crew = () => {
     return (
         <div className={styles.crewContainer}>
-            {/* <header>
-                <div className={styles['heading-5']}>
-                    <span>01</span>
-                    meet your crew
-                </div>
-            </header> */}
             <section className={styles.crewContant}>
                 <div className={styles.crewTabs}>
                     <div className={styles['heading-5']}>
-                        <span>01</span>
+                        <span>02</span>
                         meet your crew
                     </div>
                     <div className={styles.crewTabsDescription}>

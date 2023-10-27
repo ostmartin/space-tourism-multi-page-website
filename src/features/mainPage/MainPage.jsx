@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import Home from '../home/Home';
 import Destination from '../destination/Destination';
 import Crew from '../crew/Crew';
+import Technology from '../technology/Technology';
 
 // import BackgroundHome from '../home/images/background-home-desktop.jpg';
 // import BackgroundDestination from '../destination/images/background-destination-desktop.jpg';
@@ -24,11 +25,10 @@ const MainPage = () => {
                 </div>
                 <Navigation/>
             </div>
-            {/* <div className="content-section"> */}
-                {/* <Home/> */}
-                {/* <Destination/> */}
-                <Crew/>
-            {/* </div> */}
+            <Home/>
+            {/* <Destination/> */}
+            {/* <Crew/> */}
+            {/* <Technology/> */}
         </div>
     )
 }
