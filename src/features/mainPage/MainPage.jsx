@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Navigation from './Navigation';
 import Home from '../home/Home';
 import Destination from '../destination/Destination';
+import Crew from '../crew/Crew';
 
 // import BackgroundHome from '../home/images/background-home-desktop.jpg';
 // import BackgroundDestination from '../destination/images/background-destination-desktop.jpg';
@@ -23,10 +24,11 @@ const MainPage = () => {
                 </div>
                 <Navigation/>
             </div>
-            <div className="content-section">
+            {/* <div className="content-section"> */}
                 {/* <Home/> */}
-                <Destination/>
-            </div>
+                {/* <Destination/> */}
+                <Crew/>
+            {/* </div> */}
         </div>
     )
 }
