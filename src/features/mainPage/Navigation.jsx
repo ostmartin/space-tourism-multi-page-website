@@ -1,26 +1,32 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import styles from './styles/navigation.module.scss';
 
-const Navigation = () => {
+const Navigation = ({onChangeCurrentTab, curTab}) => {
+
+    const tabs = ['Home', 'Destination', 'Crew', 'Technology'];
+
+    const renderItems = (tabsArr) => {
+        return (
+            <ul className={styles.navList}>
+                {tabsArr.map((tab, i) => {
+                    return (
+                        <li key={uuidv4()}
+                            className={curTab === tab ? styles.navItemActive : styles.navItem}
+                            onClick={() => onChangeCurrentTab(tab)}
+                        >
+                            <span>{'0' + i}</span>
+                            {tab}
+                        </li>
+                    )
+                })}
+            </ul>
+        )
+    }
+
     return (
         <div className={styles.nav}>
-            <ul className={styles.navList}>
-                <li className={styles.navItem}>
-                    <span>00</span>
-                    Home
-                </li>
-                <li className={styles.navItem}>
-                    <span>01</span>
-                    Destination
-                </li>
-                <li className={styles.navItem}>
-                    <span>02</span>
-                    Crew
-                </li>
-                <li className={styles.navItem}>
-                    <span>03</span>
-                    Technology
-                </li>
-            </ul>
+            {renderItems(tabs)}
         </div>
     )
 }

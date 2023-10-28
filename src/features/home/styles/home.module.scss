@@ -2,7 +2,7 @@
 
 .home{
     &Container{
-        @apply flex flex-row px-40 pt-60;
+        @apply flex flex-col px-40 pt-60 items-center desktop:flex-row desktop:items-start;
     }
 
     &Promo{

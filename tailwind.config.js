@@ -5,9 +5,9 @@ export default {
   ],
   theme: {
     screens: {
-      mobile: '375px',
-      tablet: '768px',
-      desktop: '1440px'
+      mobile: {'max': '420px'},
+      tablet: {'max': '1024'},
+      desktop: '1024px'
     },
     colors: {
       'dark': '#0B0D17',

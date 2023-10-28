@@ -1,7 +1,7 @@
 @import '../../../main.module.scss';
 
 .nav{
-    @apply container h-full min-w-[53%] w-fit;
+    @apply container h-full tablet:w-2/3 desktop:min-w-[53%] desktop:before:block;
     
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(40.774227142333984px);
@@ -23,7 +23,7 @@
 }
 
 .navItem{
-    @apply flex gap-2 align-text-top py-9 px-5;
+    @apply flex gap-2 align-text-top py-9 px-5 text-h14;
     @extend .nav-text;
 
     cursor: pointer;
@@ -53,11 +53,32 @@
        }
     }
 
-    &.active{
-        &::after{
-            opacity: 1;
+    &Active{
+        @apply flex gap-2 align-text-top py-9 px-5;
+        @extend .nav-text;
+    
+        cursor: pointer;
+        position: relative;
+
+        span{
+            font-weight: bold;
         }
-        &::before{
+    
+        &::after{
+            content: '';
+            background-color: #fff;
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            bottom: -1px;
+            right: 0;
+            opacity: 0;
+            scale: 0;
+            transition: all 0.3s ease;
+        }
+
+        &::after{
+            scale: 1;
             opacity: 1;
         }
     }

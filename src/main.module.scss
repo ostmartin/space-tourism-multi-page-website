@@ -66,3 +66,9 @@ body{
     @apply text-h18 font-barl text-purple;
     line-height: 32px;
 }
+
+@media (max-width: 1439px) {
+    body{
+        overflow: auto;
+    }
+}
