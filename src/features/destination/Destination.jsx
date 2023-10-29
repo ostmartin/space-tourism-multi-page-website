@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { Tab } from '../../ui';
+
 import styles from './styles/destination.module.scss';
 import Moon from './images/image-moon.png';
 
@@ -18,18 +20,10 @@ const Destination = () => {
                 </div>
                 <div className={styles.tabs}>
                     <ul className={styles.tabsList}>
-                        <li className={styles.tabsListItem}>
-                            Moon
-                        </li>
-                        <li className={styles.tabsListItem}>
-                            Mars
-                        </li>
-                        <li className={styles.tabsListItem}>
-                            Europa
-                        </li>
-                        <li className={styles.tabsListItem}>
-                            Titan
-                        </li>
+                        <Tab text={'Moon'} addClass='active'/>
+                        <Tab text={'Mars'}/>
+                        <Tab text={'Europa'}/>
+                        <Tab text={'Titan'}/>
                     </ul>
                     <div className={styles.tabsDescription}>
                         <div className={styles['heading-2']}>Moon</div>

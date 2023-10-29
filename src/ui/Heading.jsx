@@ -29,7 +29,7 @@ const Heading = ({text, level}) => {
     }
 
     return (
-        <div className={`${classes} + ${addClass}`}>
+        <div className={`${classes} ${addClass}`}>
             {text}
         </div>
     )

@@ -7,7 +7,6 @@ import Destination from '../destination/Destination';
 import Crew from '../crew/Crew';
 import Technology from '../technology/Technology';
 
-import styles from './styles/mainPage.module.scss';
 import Logo from '../../assets/shared/logo';
 
 const MainPage = () => {
@@ -18,11 +17,11 @@ const MainPage = () => {
     }
 
     return (
-        <div className={styles.mainContainer}
+        <div className='container min-w-full min-h-full flex flex-col relative z-10'
             >
             <Background image={curTab}/>
-            <div className={styles.header}>
-                <div className={styles.logo}>
+            <div className='container min-w-full flex flex-row justify-between desktop:pt-10 mobile:pt-10'>
+                <div className='ps-14 flex justify-center flex-col'>
                     <a href="#">
                         <Logo/>
                     </a>

@@ -5,8 +5,8 @@ export default {
   ],
   theme: {
     screens: {
-      mobile: {'max': '420px'},
-      tablet: {'max': '1024'},
+      mobile: {'max': '767px'},
+      tablet: {'max': '1024px'},
       desktop: '1024px'
     },
     colors: {
