@@ -10,6 +10,8 @@ import Technology from '../technology/Technology';
 import styles from './styles/mainPage.module.scss';
 import Logo from '../../assets/shared/logo';
 
+import ExploreButton from '../../ui/ExploreButton';
+
 const MainPage = () => {
     const [curTab, setCurTab] = useState('Home');
     
@@ -27,7 +29,7 @@ const MainPage = () => {
                         <Logo/>
                     </a>
                 </div>
-                <Navigation onChangeCurrentTab={onChangeCurrentTab} curTab={curTab}/>
+                {/* <Navigation onChangeCurrentTab={onChangeCurrentTab} curTab={curTab}/> */}
             </div>
             <Home/>
             {/* <Destination/> */}
@@ -36,7 +38,5 @@ const MainPage = () => {
         </div>
     )
 }
-
-console.log()
 
 export default MainPage;
