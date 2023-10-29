@@ -29,8 +29,8 @@ const MainPage = () => {
                 <Navigation onChangeCurrentTab={onChangeCurrentTab} curTab={curTab}/>
             </div>
             {/* <Home/> */}
-            <Destination/>
-            {/* <Crew/> */}
+            {/* <Destination/> */}
+            <Crew/>
             {/* <Technology/> */}
         </div>
     )
