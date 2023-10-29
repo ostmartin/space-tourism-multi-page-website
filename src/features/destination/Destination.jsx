@@ -1,41 +1,40 @@
 import { useState } from 'react';
 
-import { Tab } from '../../ui';
+import { Tab, Heading, SubHeading, BodyText } from '../../ui';
 
-import styles from './styles/destination.module.scss';
 import Moon from './images/image-moon.png';
 
 const Destination = () => {
     return (
-        <div className={styles.destinationContainer}>
-            <header>
-                <div className={styles['heading-5']}>
-                    <span>01</span>
+        <div className='px-40'>
+            <header className='py-20'>
+                <div className='heading-5'>
+                    <span className='font-bold text-[#fff] opacity-[0.25] px-4'>01</span>
                     pick your destination
                 </div>
             </header>
-            <section className={styles.destinationContant}>
-                <div className={styles.planet}>
-                    <img src={Moon} alt="Moon" />
+            <section className='flex flex-row justify-between'>
+                <div className='w-[65%]'>
+                    <img className='m-auto' src={Moon} alt="Moon" />
                 </div>
-                <div className={styles.tabs}>
-                    <ul className={styles.tabsList}>
+                <div className='container h-full max-w-[50%] w-[35%]'>
+                    <ul className='flex w-full gap-8 mb-4'>
                         <Tab text={'Moon'} addClass='active'/>
                         <Tab text={'Mars'}/>
                         <Tab text={'Europa'}/>
                         <Tab text={'Titan'}/>
                     </ul>
-                    <div className={styles.tabsDescription}>
-                        <div className={styles['heading-2']}>Moon</div>
-                        <div className={styles['body-text']}>See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</div>
-                        <div className={styles.tabsDescriptionFooter}>
-                            <div className={styles['sub-1']}>
-                                <span className={styles['sub-2']}>avg. distance</span><br/>
-                                384,400 km
+                    <div>
+                        <Heading text={'Moon'} level={'2'}/>
+                        <BodyText addClass={'pb-10 pe-4'} text={'See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.'}/>
+                        <div className='flex flex-row justify-between pt-4 border-t-[1px] border-solid border-[#383b4b]'>
+                            <div>
+                                <SubHeading text={'avg. distance'} level={'2'}/>
+                                <SubHeading text={'384,400 km'} level={'1'}/>
                             </div>
-                            <div className={styles['sub-1']}>
-                                <span className={styles['sub-2']}>est. travel time</span><br/>
-                                3 days
+                            <div>
+                                <SubHeading text={'est. travel time'} level={'2'}/>
+                                <SubHeading text={'3 days'} level={'1'}/>                                
                             </div>
                         </div>
                     </div>
