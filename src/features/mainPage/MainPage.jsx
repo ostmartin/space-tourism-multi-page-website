@@ -37,4 +37,6 @@ const MainPage = () => {
     )
 }
 
+console.log()
+
 export default MainPage;
