@@ -12,7 +12,9 @@
     src: url('./fonts/Bellefair-regular.ttf') format('truetype')
 }
 
-
+// *{
+//     transition: all .7s ease;
+// }
 
 html{
     height: 100vh;
@@ -20,7 +22,6 @@ html{
 
 body{
     height: 100%;
-    overflow: hidden;
 }
 
 .heading-1{

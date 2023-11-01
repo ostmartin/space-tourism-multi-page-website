@@ -9,7 +9,7 @@ const Navigation = ({onChangeCurrentTab, curTab}) => {
 
     const renderItems = (tabsArr) => {
         return (
-            <ul className='flex w-full px-28'>
+            <ul className='flex w-full px-8 desktop:px-28'>
                 {tabsArr.map((tab, i) => {
                     return (
                         <Tab

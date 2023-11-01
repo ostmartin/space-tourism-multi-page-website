@@ -5,8 +5,10 @@ export default {
   ],
   theme: {
     screens: {
+      // mobile: '320px',
       mobile: {'max': '767px'},
-      tablet: {'max': '1024px'},
+      tablet: '768px',
+      // tablet: {'min': '768px', 'max': '1024px'},
       desktop: '1024px'
     },
     colors: {

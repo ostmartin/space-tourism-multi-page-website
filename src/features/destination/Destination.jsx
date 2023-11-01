@@ -7,12 +7,10 @@ import Moon from './images/image-moon.png';
 const Destination = () => {
     return (
         <div className='px-40'>
-            <header className='py-20'>
-                <div className='heading-5'>
-                    <span className='font-bold text-[#fff] opacity-[0.25] px-4'>01</span>
-                    pick your destination
-                </div>
-            </header>
+            <div className='heading-5 text-[#fff!important] text-center tablet:text-left mobile:text-[16px] tablet:text-[20px]'>
+                <span className='font-bold opacity-[0.25] pe-4'>01</span>
+                pick your destination
+            </div>
             <section className='flex flex-row justify-between'>
                 <div className='w-[65%]'>
                     <img className='m-auto' src={Moon} alt="Moon" />
