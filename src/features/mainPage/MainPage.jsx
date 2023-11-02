@@ -9,6 +9,23 @@ import Technology from '../technology/Technology';
 
 import Logo from '../../assets/shared/logo';
 
+const ViewContent = ({component}) => {
+    switch (component) {
+        case 'Home': 
+            return <Home/>;
+        case 'Destination':
+            return <Destination/>;
+        case 'Crew':
+            return <Crew/>;
+        case 'Technology':
+            return <Technology/>;
+        default:
+            return (
+                <div className='text-light text-h56 text-center m-auto'>Something went wrong...</div>
+            )
+    }
+}
+
 const MainPage = () => {
     const [curTab, setCurTab] = useState('Home');
     
@@ -28,10 +45,7 @@ const MainPage = () => {
                 </div>
                 <Navigation onChangeCurrentTab={onChangeCurrentTab} curTab={curTab}/>
             </div>
-            {/* <Home/> */}
-            {/* <Destination/> */}
-            {/* <Crew/> */}
-            <Technology/>
+            <ViewContent component={curTab}/>
         </div>
     )
 }
