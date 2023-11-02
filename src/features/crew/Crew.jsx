@@ -5,7 +5,7 @@ import Commander from './images/image-douglas-hurley.png';
 const Crew = () => {
     return (
         <div className='px-6 tablet:px-8 desktop:px-40 pt-10 desktop:pt-20 max-w-[1440px] xxl:mx-auto'>
-            <div className='heading-5 text-[#fff!important] tablet:text-left mobile:text-[16px] tablet:text-[20px]'>
+            <div className='heading-5 mobile:text-center text-[#fff!important] tablet:text-left mobile:text-[16px] tablet:text-[20px]'>
                 <span className='font-bold opacity-[0.25] pe-4'>02</span>
                 meet your crew
             </div>

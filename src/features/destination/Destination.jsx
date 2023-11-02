@@ -7,7 +7,7 @@ import Moon from './images/image-moon.png';
 const Destination = () => {
     return (
         <div className='px-40 max-w-[1440px] xxl:mx-auto'>
-            <div className='heading-5 py-20 text-[#fff!important] text-center tablet:text-left'>
+            <div className='heading-5 mobile:text-center py-20 text-[#fff!important] text-center tablet:text-left'>
                 <span className='font-bold opacity-[0.25] pe-4'>01</span>
                 pick your destination
             </div>
