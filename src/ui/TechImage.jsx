@@ -1,11 +1,11 @@
-import VehiclePortrait from './images/image-launch-vehicle-portrait.jpg';
-import VehicleLandscape from './images/image-launch-vehicle-landscape.jpg';
+import VehiclePortrait from '../assets/images/TechImages/image-launch-vehicle-portrait.jpg';
+import VehicleLandscape from '../assets/images/TechImages/image-launch-vehicle-landscape.jpg';
 
-import SpaceCapsulePortrait from './images/image-space-capsule-portrait.jpg';
-import SpaceCapsuleLandscape from './images/image-space-capsule-landscape.jpg';
+import SpaceCapsulePortrait from '../assets/images/TechImages/image-space-capsule-portrait.jpg';
+import SpaceCapsuleLandscape from '../assets/images/TechImages/image-space-capsule-landscape.jpg';
 
-import SpacePortPortrait from './images/image-spaceport-portrait.jpg';
-import SpacePortLandscape from './images/image-spaceport-landscape.jpg';
+import SpacePortPortrait from '../assets/images/TechImages/image-spaceport-portrait.jpg';
+import SpacePortLandscape from '../assets/images/TechImages/image-spaceport-landscape.jpg';
 
 const IMGS = {
     'Launch Vehicle': {
