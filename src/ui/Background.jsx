@@ -1,5 +1,3 @@
-import './styles/background.scss';
-
 import HomeDesktop from './backgroundImages/home/background-home-desktop.jpg';
 import HomeTablet from './backgroundImages/home/background-home-tablet.jpg';
 import HomeMobile from './backgroundImages/home/background-home-mobile.jpg';
@@ -42,12 +40,12 @@ const BG_IMGS = {
 const Background = ({image}) => {
     return (
         <div className="absolute w-full h-full -z-10">
-            <picture>
-                <source media="(min-width: 1440px)"
-                        srcSet={`${BG_IMGS[image].desktop} 1440w`}/>
+            <picture className='h-full block'>
+                <source media="(min-width: 1280px)"
+                        srcSet={`${BG_IMGS[image].desktop} 1280w`}/>
                 <source media="(min-width: 421px)"
                         srcSet={`${BG_IMGS[image].tablet} 768w`}/>
-                <img src={BG_IMGS[image].mobile} alt="background"/>
+                <img className='w-full h-full' src={BG_IMGS[image].mobile} alt="background"/>
             </picture>
         </div>
     )

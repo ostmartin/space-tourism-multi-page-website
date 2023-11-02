@@ -1,0 +1,24 @@
+.nav{
+    @apply container h-full w-fit mobile:hidden;
+    
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.774227142333984px);
+    position: relative;
+
+    &::before{
+        content: '';
+        width: 72%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2515);
+        position: absolute;
+        top: 50%;
+        transform: translateX(-92%);
+    }
+}
+
+
+@media (max-width: 1280px) {
+    .nav::before{
+        display: none;
+    }
+}

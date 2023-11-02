@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
+import { Tab } from '../../ui';
 
-import styles from './styles/navigation.module.scss';
+import './styles/navigation.scss';
 
 const Navigation = ({onChangeCurrentTab, curTab}) => {
 
@@ -8,16 +9,17 @@ const Navigation = ({onChangeCurrentTab, curTab}) => {
 
     const renderItems = (tabsArr) => {
         return (
-            <ul className={styles.navList}>
+            <ul className='flex w-full px-8 desktop:px-28'>
                 {tabsArr.map((tab, i) => {
                     return (
-                        <li key={uuidv4()}
-                            className={curTab === tab ? styles.navItemActive : styles.navItem}
-                            onClick={() => onChangeCurrentTab(tab)}
-                        >
-                            <span>{'0' + i}</span>
-                            {tab}
-                        </li>
+                        <Tab
+                            key={uuidv4()}
+                            text={tab}
+                            isNavTab={true}
+                            index={i}
+                            onTabClick={() => onChangeCurrentTab(tab)}
+                            addClass={curTab === tab ? 'active' : ''}
+                        />
                     )
                 })}
             </ul>
@@ -25,7 +27,7 @@ const Navigation = ({onChangeCurrentTab, curTab}) => {
     }
 
     return (
-        <div className={styles.nav}>
+        <div className='nav'>
             {renderItems(tabs)}
         </div>
     )

@@ -5,9 +5,12 @@ export default {
   ],
   theme: {
     screens: {
-      mobile: {'max': '420px'},
-      tablet: {'max': '1024'},
-      desktop: '1024px'
+      // mobile: '320px',
+      mobile: {'max': '767px'},
+      tablet: '768px',
+      // tablet: {'min': '768px', 'max': '1024px'},
+      desktop: '1024px',
+      xxl: '1440px'
     },
     colors: {
       'dark': '#0B0D17',
@@ -24,17 +27,18 @@ export default {
       '2.35': '2.35px',
       '2.7': '2.7px'
     },
-    fontSize: {
-      'h150': '150px',
-      'h100': '100px',
-      'h56': '56px',
-      'h32': '32px',
-      'h28': '28px',
-      'h18': '18px',
-      'h16': '16px',
-      'h14': '14px',
+    extend: {
+      fontSize: {
+        'h150': '150px',
+        'h100': '100px',
+        'h56': '56px',
+        'h32': '32px',
+        'h28': '28px',
+        'h18': '18px',
+        'h16': '16px',
+        'h14': '14px',
+      }
     },
-    extend: {},
   },
   plugins: [],
 }
