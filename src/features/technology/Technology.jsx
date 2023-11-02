@@ -1,5 +1,4 @@
-import { Heading, BodyText, TechTab } from '../../ui';
-import TechImage from './TechImage';
+import { Heading, BodyText, TechTab, TechImage } from '../../ui';
 
 const Technology = () => {
 

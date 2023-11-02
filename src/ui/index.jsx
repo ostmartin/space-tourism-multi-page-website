@@ -4,6 +4,8 @@ import BodyText from "./BodyText";
 import SubHeading from "./SubHeading";
 import Tab from "./Tab";
 import TechTab from "./TechTab";
+import TechImage from "./TechImage";
+import Background from "./Background";
 
 export {
     ExploreButton,
@@ -11,5 +13,7 @@ export {
     SubHeading,
     BodyText,
     Tab,
-    TechTab
+    TechTab,
+    TechImage,
+    Background
 };

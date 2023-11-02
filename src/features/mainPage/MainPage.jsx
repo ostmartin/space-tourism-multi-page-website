@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Navigation from './Navigation';
-import Background from './Background';
+import Background from '../../ui/Background';
 import Home from '../home/Home';
 import Destination from '../destination/Destination';
 import Crew from '../crew/Crew';
