@@ -1,5 +1,5 @@
 const Heading = ({text, level, addClass = ''}) => {
-    const classes = 'customize_heading text-light uppercase';
+    const classes = 'text-light uppercase';
     let extraClass = '';
 
     switch (level) {
@@ -12,7 +12,7 @@ const Heading = ({text, level, addClass = ''}) => {
             break;
         }
         case '3': {
-            extraClass = 'text-h56 font-bell tablet:text-[40px] mobile:text-[24px]';
+            extraClass = 'desktop:text-h56 font-bell tablet:text-[40px] mobile:text-[24px]';
             break;
         }
         case '4': {

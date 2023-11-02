@@ -4,7 +4,7 @@ import Commander from './images/image-douglas-hurley.png';
 
 const Crew = () => {
     return (
-        <div className='px-6 tablet:px-8 desktop:px-40 pt-10 desktop:pt-20'>
+        <div className='px-6 tablet:px-8 desktop:px-40 pt-10 desktop:pt-20 max-w-[1440px] xxl:mx-auto'>
             <div className='heading-5 text-[#fff!important] tablet:text-left mobile:text-[16px] tablet:text-[20px]'>
                 <span className='font-bold opacity-[0.25] pe-4'>02</span>
                 meet your crew
@@ -23,7 +23,7 @@ const Crew = () => {
                         <span className='h-4 w-4 rounded-full bg-[#fff] opacity-[0.174363] block hover:opacity-50'></span>
                     </div>
                 </div>
-                <div className='mobile:border-b-grey border-b-[1px] desktop:w-[45%]'>
+                <div className='mobile:border-b-grey mobile:border-b-[1px] desktop:w-[45%]'>
                     <img className='mx-auto h-full max-w-[70%] tablet:max-w-full' src={Commander} alt="Douglas Hurley" />
                 </div>
             </section>

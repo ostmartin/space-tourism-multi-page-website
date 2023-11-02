@@ -40,12 +40,12 @@ body{
 
 .heading-4{
     @extend .heading-1;
-    @apply text-h32;
+    @apply mobile:text-h16 tablet:text-[24px] desktop:text-h32;
 }
 
 .heading-5{
     @extend .heading-1;
-    @apply text-h28 tracking-4.725 text-purple font-barl;
+    @apply desktop:text-h28 tracking-4.725 text-purple font-barl mobile:text-[16px] tablet:text-[20px];
 }
 
 .sub-1{
@@ -106,4 +106,10 @@ body{
 
 .active{
     opacity: 1;
+}
+
+.tabActive{
+    opacity: 1;
+    background-color: #fff;
+    color: #0B0D17;
 }

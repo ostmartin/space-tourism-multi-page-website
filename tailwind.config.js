@@ -9,7 +9,8 @@ export default {
       mobile: {'max': '767px'},
       tablet: '768px',
       // tablet: {'min': '768px', 'max': '1024px'},
-      desktop: '1024px'
+      desktop: '1024px',
+      xxl: '1440px'
     },
     colors: {
       'dark': '#0B0D17',

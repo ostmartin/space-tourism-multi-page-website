@@ -20,7 +20,7 @@ const MainPage = () => {
         <div className='container min-w-full min-h-full flex flex-col relative z-10'
             >
             <Background image={curTab}/>
-            <div className='container min-w-full flex flex-row justify-between desktop:pt-10 mobile:pt-10'>
+            <div className='container w-full flex flex-row justify-between desktop:pt-10 mobile:pt-10 max-w-[1440px] mx-auto'>
                 <div className='ps-6 scale-75 tablet:scale-100 tablet:ps-8 desktop:ps-14 flex justify-center flex-col'>
                     <a href="#">
                         <Logo/>
@@ -28,10 +28,10 @@ const MainPage = () => {
                 </div>
                 <Navigation onChangeCurrentTab={onChangeCurrentTab} curTab={curTab}/>
             </div>
-            <Home/>
+            {/* <Home/> */}
             {/* <Destination/> */}
             {/* <Crew/> */}
-            {/* <Technology/> */}
+            <Technology/>
         </div>
     )
 }

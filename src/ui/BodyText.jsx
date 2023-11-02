@@ -1,5 +1,5 @@
 const BodyText = ({text, addClass}) => {
-    const classes = 'text-h18 mobile:text-[15px] font-barl text-purple leading-2';
+    const classes = 'text-h18 mobile:text-[15px] font-barl text-purple leading-8';
     return (
         <div className={`${classes} ${addClass}`}>
             {text}

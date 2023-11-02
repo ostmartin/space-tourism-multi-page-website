@@ -6,7 +6,7 @@ import {
 
 const Home = () => {
     return (
-        <div className='flex flex-col mobile:pt-10 mobile:gap-20 tablet:pt-20 tablet:gap-40 desktop:px-24 desktop:pt-60 items-center desktop:flex-row desktop:items-start'>
+        <div className='flex flex-col mobile:pt-10 mobile:gap-20 tablet:pt-20 tablet:gap-40 desktop:px-24 desktop:pt-60 items-center desktop:flex-row desktop:items-start max-w-[1440px] xxl:mx-auto'>
             <div className='text-center w-full mobile:px-10 tablet:px-20 desktop:w-[60%] desktop:text-left'>
                 <Heading text={'So, you want to travel to'} level={'5'}/>
                 <Heading text={'Space'} level={'1'}/>
@@ -20,5 +20,3 @@ const Home = () => {
 }
 
 export default Home;
-
-// desktop:translate-x-[70%] desktop:translate-y-[30%]
