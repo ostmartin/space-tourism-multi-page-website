@@ -97,6 +97,7 @@ body{
     }
 
     &.active{
+        color: #fff;
         &::after{
             scale: 1;
             opacity: 1;

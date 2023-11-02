@@ -9,10 +9,10 @@ import Technology from '../technology/Technology';
 
 import Logo from '../../assets/shared/logo';
 
-const ViewContent = ({component}) => {
+const ViewContent = ({component, onClickHandler}) => {
     switch (component) {
         case 'Home': 
-            return <Home/>;
+            return <Home onClick={onClickHandler}/>;
         case 'Destination':
             return <Destination/>;
         case 'Crew':
@@ -45,7 +45,7 @@ const MainPage = () => {
                 </div>
                 <Navigation onChangeCurrentTab={onChangeCurrentTab} curTab={curTab}/>
             </div>
-            <ViewContent component={curTab}/>
+            <ViewContent component={curTab} onClickHandler={onChangeCurrentTab}/>
         </div>
     )
 }

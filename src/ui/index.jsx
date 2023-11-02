@@ -6,6 +6,7 @@ import Tab from "./Tab";
 import TechTab from "./TechTab";
 import TechImage from "./TechImage";
 import Background from "./Background";
+import Dots from './Dots.jsx';
 
 export {
     ExploreButton,
@@ -15,5 +16,6 @@ export {
     Tab,
     TechTab,
     TechImage,
-    Background
+    Background,
+    Dots
 };

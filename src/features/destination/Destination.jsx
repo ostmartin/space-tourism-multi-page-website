@@ -12,7 +12,7 @@ const Destination = () => {
                 pick your destination
             </div>
             <section className='flex flex-row justify-between'>
-                <div className='w-[65%]'>
+                <div className='w-[55%]'>
                     <img className='m-auto' src={Moon} alt="Moon" />
                 </div>
                 <div className='container h-full max-w-[50%] w-[35%]'>
