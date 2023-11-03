@@ -19,7 +19,7 @@ const Technology = () => {
 
     return (
         <div className='desktop:ps-40 max-w-[1440px] pt-10 desktop:pt-20 xxl:mx-auto'>
-            <div className='heading-5 desktop:text-h28 mobile:text-center text-[#fff!important] tablet:text-left mobile:text-[16px] tablet:text-[20px]'>
+            <div className='heading-5 ps-6 desktop:ps-0 desktop:text-h28 mobile:text-center text-[#fff!important] tablet:text-left mobile:text-[16px] tablet:text-[20px]'>
                 <span className='font-bold opacity-[0.25] pe-4'>03</span>
                 space launch 101
             </div>
