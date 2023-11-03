@@ -8,11 +8,11 @@ import SpacePortPortrait from '../assets/images/TechImages/image-spaceport-portr
 import SpacePortLandscape from '../assets/images/TechImages/image-spaceport-landscape.jpg';
 
 const IMGS = {
-    'Launch Vehicle': {
+    'Launch vehicle': {
         portrait: VehiclePortrait,
         landscape: VehicleLandscape
     },
-    'Space Capsule': {
+    'Space capsule': {
         portrait: SpaceCapsulePortrait,
         landscape: SpaceCapsuleLandscape
     },
@@ -27,7 +27,7 @@ const TechImage = ({image}) => {
         <picture>
             <source media="(min-width: 1024px)"
                         srcSet={`${IMGS[image].portrait}`}/>
-            <img className='w-full' src={IMGS[image].landscape} alt={image} />
+            <img className='w-full max-h-full' src={IMGS[image].landscape} alt={image} />
         </picture>
         
     )

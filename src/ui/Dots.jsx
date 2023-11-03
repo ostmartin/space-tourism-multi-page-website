@@ -1,13 +1,13 @@
-const Dots = ({activeDot, count}) => {
+const Dots = ({count, onDotClick, itemsList, current}) => {
     const dots = [];
 
     for (let i = 0; i < count; i++) {
-        let addClass = '';
-        if (i + 1 === activeDot) {
-            addClass = 'active';
-        }
+        let addClass = 'h-4 w-4 rounded-full bg-[#fff] opacity-[0.174363] block hover:opacity-50';
 
-        const dot = <span key={i} className={`${addClass} h-4 w-4 rounded-full bg-[#fff] opacity-[0.174363] block hover:opacity-50`}></span>
+        const dot = <span 
+                        key={i} 
+                        onClick={() => onDotClick(itemsList[i])}
+                        className={current === itemsList[i] ? `${addClass} active` : addClass}></span>
         dots.push(dot);
     }
 
