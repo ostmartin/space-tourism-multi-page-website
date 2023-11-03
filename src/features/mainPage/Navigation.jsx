@@ -33,7 +33,9 @@ const Navigation = ({onChangeCurrentTab, curTab}) => {
             {renderItems(tabs)}
             <div className='mobile:block hidden pe-6 mobile:bg relative z-50'>
                 <IconHumburger/>
-                {/* <IconClose/> */}
+            </div>
+            <div className='hidden pe-6 mobile:bg relative z-50'>
+                <IconClose/>
             </div>
         </div>
     )
