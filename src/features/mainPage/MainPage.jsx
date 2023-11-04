@@ -34,10 +34,10 @@ const MainPage = () => {
     }, [curTab])
 
     return (
-        <div className='container min-w-full min-h-full flex flex-col relative z-10'
+        <div className='container min-w-full min-h-full flex flex-col relative z-10 handleOverflow'
             >
             <Background image={curTab}/>
-            <div className='container w-full flex flex-row justify-between items-center desktop:pt-10 mobile:pt-10 max-w-[1440px] mx-auto'>
+            <div className='container w-full flex flex-row justify-between items-center desktop:pt-10 mobile:pt-10 max-w-[1440px] mx-auto relative'>
                 <div className='ps-6 mobile:scale-75 tablet:ps-8 desktop:ps-14 flex justify-center flex-col'>
                     <a href="#">
                         <Logo/>
