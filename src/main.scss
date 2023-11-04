@@ -12,10 +12,6 @@
     src: url('./fonts/Bellefair-regular.ttf') format('truetype')
 }
 
-// *{
-//     transition: all .7s ease;
-// }
-
 html{
     height: 100vh;
 }
@@ -109,12 +105,20 @@ body{
     opacity: 1;
 }
 
-.tabActive{
+.techTabActive{
     opacity: 1;
     background-color: #fff;
     color: #0B0D17;
 }
 
 .show{
-    display: block !important;
+    display: flex !important;
+}
+
+.hide{
+    display: none !important;
+}
+
+.handleOverflow{
+    overflow: hidden;
 }

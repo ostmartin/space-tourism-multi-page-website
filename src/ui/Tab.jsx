@@ -4,7 +4,7 @@ const Tab = ({text, addClass = '', isNavTab = false, index, onTabClick}) => {
             <li className={`flex gap-2 align-text-top py-9 px-5 text-h16 tracking-2.7 font-barl text-light uppercase cursor-pointer relative afterTab ${addClass}`}
                 onClick={onTabClick}
             >
-                <span className="font-bold hidden desktop:block">{'0' + index}</span>
+                <span className="font-bold hidden mobile:block desktop:block">{'0' + index}</span>
                 {text}
             </li>
         )

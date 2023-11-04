@@ -31,9 +31,9 @@ const Technology = () => {
                         <BodyText addClass={'desktop:w-[60%] text-center desktop:text-left'} text={description}/>
                     </div>
                     <div className='flex desktop:flex-col justify-start gap-8 dots'>
-                        <TechTab text={'1'} onTabClick={() => getItem('Launch vehicle')} addClass={name === 'Launch vehicle' ? 'tabActive' : ''}/>
-                        <TechTab text={'2'} onTabClick={() => getItem('Spaceport')} addClass={name === 'Spaceport' ? 'tabActive' : ''}/>
-                        <TechTab text={'3'} onTabClick={() => getItem('Space capsule')} addClass={name === 'Space capsule' ? 'tabActive' : ''}/>
+                        <TechTab text={'1'} onTabClick={() => getItem('Launch vehicle')} addClass={name === 'Launch vehicle' ? 'techTabActive' : ''}/>
+                        <TechTab text={'2'} onTabClick={() => getItem('Spaceport')} addClass={name === 'Spaceport' ? 'techTabActive' : ''}/>
+                        <TechTab text={'3'} onTabClick={() => getItem('Space capsule')} addClass={name === 'Space capsule' ? 'techTabActive' : ''}/>
                     </div>
                 </div>
                 <div className='basis-full desktop:max-w-[500px] desktop:max-h-[500px]'>
