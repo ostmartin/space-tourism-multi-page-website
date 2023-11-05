@@ -29,6 +29,7 @@ const Navigation = ({onChangeCurrentTab, curTab}) => {
                             onTabClick={() => {
                                 onChangeCurrentTab(tab);
                                 setMenuOpen(false);
+                                document.body.classList.remove('handleOverflow');
                             }}
                             addClass={curTab === tab ? 'active' : ''}
                         />
