@@ -8,26 +8,10 @@ import Crew from '../crew/Crew';
 import Technology from '../technology/Technology';
 
 import Logo from '../../assets/shared/logo';
-
-const ViewContent = ({component, onClickHandler}) => {
-    switch (component) {
-        case 'Home': 
-            return <Home onClick={onClickHandler}/>;
-        case 'Destination':
-            return <Destination/>;
-        case 'Crew':
-            return <Crew/>;
-        case 'Technology':
-            return <Technology/>;
-        default:
-            return (
-                <div className='text-light text-h56 text-center m-auto'>Something went wrong...</div>
-            )
-    }
-}
+import { Outlet } from 'react-router-dom';
 
 const MainPage = () => {
-    const [curTab, setCurTab] = useState('Home');
+    const [curTab, setCurTab] = useState('home');
     
     const onChangeCurrentTab = useCallback((tab) => {
         setCurTab(tab);
@@ -45,7 +29,7 @@ const MainPage = () => {
                 </div>
                 <Navigation onChangeCurrentTab={onChangeCurrentTab} curTab={curTab}/>
             </div>
-            <ViewContent component={curTab} onClickHandler={onChangeCurrentTab}/>
+            <Outlet context={onChangeCurrentTab}/>
         </div>
     )
 }

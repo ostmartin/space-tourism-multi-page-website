@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import { Tab } from '../../ui';
+import { NavLink } from 'react-router-dom';
 
 import './styles/navigation.scss';
 import IconHumburger from '../../assets/shared/icon-hamburger';
 import IconClose from '../../assets/shared/icon-close';
 
-const Navigation = ({onChangeCurrentTab, curTab}) => {
+const Navigation = ({onChangeCurrentTab}) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleBurgerMenu = () => {
@@ -14,34 +13,66 @@ const Navigation = ({onChangeCurrentTab, curTab}) => {
         document.body.classList.toggle('handleOverflow');
     }
 
-    const tabs = ['Home', 'Destination', 'Crew', 'Technology'];
+    const tabs = ['', 'destination', 'crew', 'technology'];
 
-    const renderItems = (tabsArr) => {
-        return (
-            <ul className={'flex w-full px-8 bg-light/[0.04] backdrop-blur-2xl desktop:px-28 z-20 menu' + (menuOpen ? ' show' : '')}>
-                {tabsArr.map((tab, i) => {
-                    return (
-                        <Tab
-                            key={uuidv4()}
-                            text={tab}
-                            isNavTab={true}
-                            index={i}
-                            onTabClick={() => {
-                                onChangeCurrentTab(tab);
-                                setMenuOpen(false);
-                                document.body.classList.remove('handleOverflow');
-                            }}
-                            addClass={curTab === tab ? 'active' : ''}
-                        />
-                    )
-                })}
-            </ul>
-        )
-    }
+    const classes = 'flex gap-2 py-9 px-5 text-h16 tracking-2.7 font-barl text-light uppercase cursor-pointer relative afterTab'
 
     return (
         <div className='nav container h-full w-fit tablet:relative z-10'>
-            {renderItems(tabs)}
+            <ul className={'flex w-full px-8 bg-light/[0.04] backdrop-blur-2xl desktop:px-28 z-20 menu' + (menuOpen ? ' show' : '')}>
+                <li>
+                    <NavLink 
+                        to='/'
+                        className={({isActive, isPending}) => isActive ? (classes + ' active') : classes} 
+                        onClick={() => {
+                            onChangeCurrentTab('home');
+                            setMenuOpen(false);
+                            document.body.classList.remove('handleOverflow');
+                        }}>
+                        <span className="font-bold hidden mobile:block desktop:block">01</span>
+                        home
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        to='/destination/moon'
+                        className={({isActive, isPending}) => isActive ? (classes + ' active') : classes} 
+                        onClick={() => {
+                            onChangeCurrentTab('destination');
+                            setMenuOpen(false);
+                            document.body.classList.remove('handleOverflow');
+                        }}>
+                        <span className="font-bold hidden mobile:block desktop:block">02</span>
+                        destination
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        to='/crew/douglas-hurley'
+                        className={({isActive, isPending}) => isActive ? (classes + ' active') : classes} 
+                        onClick={() => {
+                            onChangeCurrentTab('crew');
+                            setMenuOpen(false);
+                            document.body.classList.remove('handleOverflow');
+                        }}>
+                        <span className="font-bold hidden mobile:block desktop:block">03</span>
+                        crew
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        to='/technology/launch-vehicle'
+                        className={({isActive, isPending}) => isActive ? (classes + ' active') : classes} 
+                        onClick={() => {
+                            onChangeCurrentTab('technology');
+                            setMenuOpen(false);
+                            document.body.classList.remove('handleOverflow');
+                        }}>
+                        <span className="font-bold hidden mobile:block desktop:block">04</span>
+                        technology
+                    </NavLink>
+                </li>
+            </ul>
             <div 
                 onClick={toggleBurgerMenu}
                 className={menuOpen ? 'tablet:hidden pe-6 mobile:bg relative z-50 hide' : 'mobile:block hidden pe-6 mobile:bg relative z-50'}>

@@ -15,22 +15,22 @@ import TechnologyTablet from '../assets/images/backgroundImages/technology/backg
 import TechnologyMobile from '../assets/images/backgroundImages/technology/background-technology-mobile.jpg';
 
 const BG_IMGS = {
-    'Home': {
+    'home': {
         desktop: HomeDesktop,
         tablet: HomeTablet,
         mobile: HomeMobile
     },
-    'Destination': {
+    'destination': {
         desktop: DestinationDesktop,
         tablet: DestinationTablet,
         mobile: DestinationMobile
     },
-    'Crew': {
+    'crew': {
         desktop: CrewDesktop,
         tablet: CrewTablet,
         mobile: CrewMobile
     },
-    'Technology': {
+    'technology': {
         desktop: TechnologyDesktop,
         tablet: TechnologyTablet,
         mobile: TechnologyMobile

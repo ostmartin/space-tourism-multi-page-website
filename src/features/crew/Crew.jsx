@@ -27,7 +27,7 @@ const Crew = () => {
     }, [])
     
     useEffect(() => {
-        getMember(crewList[1]);
+        getMember(crewList[0]);
     }, [])
 
     if (!currentMember) {
