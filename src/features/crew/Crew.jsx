@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 import { Heading, BodyText, Dots } from '../../ui';
 
@@ -17,17 +17,23 @@ const CREW_IMGS = {
 }
 
 const Crew = () => {
-    const [currentMember, setCurrentMember] = useState({
-        "name": "Douglas Hurley",
-        "role": "Commander",
-        "bio": "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
-    });
+    const [currentMember, setCurrentMember] = useState(null);
 
     const crewList = DATA.crew.map(member => member.name);
 
-    const getMember = (newMember) => {
+    const getMember = useCallback((newMember) => {
         const curMember = DATA.crew.find(member => member.name === newMember);
         setCurrentMember(curMember);
+    }, [])
+    
+    useEffect(() => {
+        getMember(crewList[1]);
+    }, [])
+
+    if (!currentMember) {
+        return (
+            <div className='text-center text-light font-barl text-h32 m-auto'>You seem to be the only one here...</div>
+        )
     }
 
     const {name, role, bio} = currentMember;

@@ -1,18 +1,25 @@
-import { useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 import { Heading, BodyText, TechTab, TechImage } from '../../ui';
 
 import DATA from '../../data.json';
 
 const Technology = () => {
-    const [currentItem, setCurrentItem] = useState({
-        "name": "Launch vehicle",
-        "description": "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!"
-      })
+    const [currentItem, setCurrentItem] = useState(null)
 
-    const getItem = (item) => {
+    const getItem = useCallback((item) => {
         const curItem = DATA.technology.find(entry => entry.name === item);
         setCurrentItem(curItem);
+    },[])
+
+    useEffect(() => {
+        getItem('Launch vehicle');
+    }, [])
+
+    if (!currentItem) {
+        return (
+            <div className='text-center text-light font-barl text-h32 m-auto'>Try again later...</div>
+        )
     }
 
     const {name, description} = currentItem;

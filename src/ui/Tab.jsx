@@ -12,7 +12,7 @@ const Tab = ({text, addClass = '', isNavTab = false, index, onTabClick}) => {
 
     return (
         <li
-            onClick={onTabClick}
+            onClick={() => onTabClick(text)}
             className={`font-barl text-h16 text-purple tracking-2.7 uppercase align-text-top pb-3 cursor-pointer relative afterTab  ${addClass}`}>
             {text}
         </li>

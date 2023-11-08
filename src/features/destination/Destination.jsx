@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import { Tab, Heading, SubHeading, BodyText } from '../../ui';
 
@@ -17,16 +17,21 @@ const PLANETS_IMGS = {
 }
 
 const Destination = () => {
-    const [currentPlanet, setCurrentPlanet] = useState({
-            "name": "Moon",
-            "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
-            "distance": "384,400 km",
-            "travel": "3 days"
-        });
+    const [currentPlanet, setCurrentPlanet] = useState(null);
 
-    const getPlanet = (planet) => {
+    const getPlanet = useCallback((planet) => {
         const curPlanet = DATA['destinations'].find(destination => destination.name === planet);
         setCurrentPlanet(curPlanet);
+    }, [])
+
+    useEffect(() => {
+        getPlanet('Moon');
+    }, [])
+
+    if (!currentPlanet) {
+        return (
+            <div className='text-center text-light font-barl text-h32 m-auto'>There don't seem to be any more planets in this system...</div>
+        )
     }
 
     const {name, description, distance, travel} = currentPlanet;
@@ -43,10 +48,10 @@ const Destination = () => {
                 </div>
                 <div className='h-full w-5/6 desktop:max-w-[50%] desktop:w-[35%] py-16'>
                     <ul className='flex w-full gap-8 mb-4 justify-center desktop:justify-start'>
-                        <Tab text={'Moon'} onTabClick={() => getPlanet('Moon')} addClass={currentPlanet['name'] === 'Moon' ? 'active' : ''}/>
-                        <Tab text={'Mars'} onTabClick={() => getPlanet('Mars')} addClass={currentPlanet['name'] === 'Mars' ? 'active' : ''}/>
-                        <Tab text={'Europa'} onTabClick={() => getPlanet('Europa')} addClass={currentPlanet['name'] === 'Europa' ? 'active' : ''}/>
-                        <Tab text={'Titan'} onTabClick={() => getPlanet('Titan')} addClass={currentPlanet['name'] === 'Titan' ? 'active' : ''}/>
+                        <Tab text={'Moon'} onTabClick={getPlanet} addClass={currentPlanet['name'] === 'Moon' ? 'active' : ''}/>
+                        <Tab text={'Mars'} onTabClick={getPlanet} addClass={currentPlanet['name'] === 'Mars' ? 'active' : ''}/>
+                        <Tab text={'Europa'} onTabClick={getPlanet} addClass={currentPlanet['name'] === 'Europa' ? 'active' : ''}/>
+                        <Tab text={'Titan'} onTabClick={getPlanet} addClass={currentPlanet['name'] === 'Titan' ? 'active' : ''}/>
                     </ul>
                     <div className='text-center flex flex-col justify-between desktop:text-left tablet:min-h-[340px] desktop:min-h-[375px]'>
                         <Heading text={name} level={'2'}/>
