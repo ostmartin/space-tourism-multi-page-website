@@ -2,10 +2,6 @@ import { useCallback, useState } from 'react';
 
 import Navigation from './Navigation';
 import Background from '../../ui/Background';
-import Home from '../home/Home';
-import Destination from '../destination/Destination';
-import Crew from '../crew/Crew';
-import Technology from '../technology/Technology';
 
 import Logo from '../../assets/shared/logo';
 import { Outlet } from 'react-router-dom';

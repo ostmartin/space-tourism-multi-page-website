@@ -29,7 +29,7 @@ const Navigation = ({onChangeCurrentTab}) => {
                             setMenuOpen(false);
                             document.body.classList.remove('handleOverflow');
                         }}>
-                        <span className="font-bold hidden mobile:block desktop:block">01</span>
+                        <span className="font-bold hidden mobile:block desktop:block">00</span>
                         home
                     </NavLink>
                 </li>
@@ -42,7 +42,7 @@ const Navigation = ({onChangeCurrentTab}) => {
                             setMenuOpen(false);
                             document.body.classList.remove('handleOverflow');
                         }}>
-                        <span className="font-bold hidden mobile:block desktop:block">02</span>
+                        <span className="font-bold hidden mobile:block desktop:block">01</span>
                         destination
                     </NavLink>
                 </li>
@@ -55,7 +55,7 @@ const Navigation = ({onChangeCurrentTab}) => {
                             setMenuOpen(false);
                             document.body.classList.remove('handleOverflow');
                         }}>
-                        <span className="font-bold hidden mobile:block desktop:block">03</span>
+                        <span className="font-bold hidden mobile:block desktop:block">02</span>
                         crew
                     </NavLink>
                 </li>
@@ -68,7 +68,7 @@ const Navigation = ({onChangeCurrentTab}) => {
                             setMenuOpen(false);
                             document.body.classList.remove('handleOverflow');
                         }}>
-                        <span className="font-bold hidden mobile:block desktop:block">04</span>
+                        <span className="font-bold hidden mobile:block desktop:block">03</span>
                         technology
                     </NavLink>
                 </li>

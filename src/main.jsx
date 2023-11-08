@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import MainPage from './features/mainPage/MainPage.jsx';
-import Home from './features/home/Home.jsx';
-import Crew from './features/crew/Crew.jsx';
-import Destination from './features/destination/Destination.jsx';
-import Technology from './features/technology/Technology.jsx';
+import {
+  MainPage,
+  Home,
+  Destination,
+  Crew,
+  Technology
+} from './features';
 
 import './main.scss';
 
