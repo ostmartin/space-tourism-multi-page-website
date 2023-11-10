@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { loader as destinationsLoader } from './features/destination/Destination';
 import { loader as crewLoader } from './features/crew/Crew';
+import { loader as techLoader } from './features/technology/Technology';
 
 import {
   MainPage,
@@ -35,7 +36,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'technology/:techId',
-        element: <Technology/>
+        element: <Technology/>,
+        loader: techLoader
       }
     ]
   }

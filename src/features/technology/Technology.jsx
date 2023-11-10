@@ -1,20 +1,23 @@
-import { useCallback, useState, useEffect } from 'react';
+import { Heading, BodyText, TechImage } from '../../ui';
 
-import { Heading, BodyText, TechTab, TechImage } from '../../ui';
+import { capitalizeFirstLetter, getData } from '../../service';
 
-import DATA from '../../data.json';
+import { NavLink, useLoaderData } from 'react-router-dom';
+
+export const loader = async ({params}) => {
+    const item = params.techId.split('-').map((word, i) => {
+        if (i === 0) {
+            return capitalizeFirstLetter(word);
+        } else {
+            return word;
+        }
+    }).join(' ');
+
+    return getData(item, 'technology');
+}
 
 const Technology = () => {
-    const [currentItem, setCurrentItem] = useState(null)
-
-    const getItem = useCallback((item) => {
-        const curItem = DATA.technology.find(entry => entry.name === item);
-        setCurrentItem(curItem);
-    },[])
-
-    useEffect(() => {
-        getItem('Launch vehicle');
-    }, [])
+    const currentItem = useLoaderData();
 
     if (!currentItem) {
         return (
@@ -23,6 +26,7 @@ const Technology = () => {
     }
 
     const {name, description} = currentItem;
+    const tabClasses = 'heading-4 h-[40px] w-[40px] rounded-full bg-opacity-0 border-light/25 border-solid border-[1px] flex justify-center items-center tablet:w-[60px] tablet:h-[60px] desktop:w-[80px] desktop:h-[80px] hover:border-light/100';
 
     return (
         <div className='desktop:ps-40 max-w-[1440px] pt-10 desktop:pt-20 xxl:mx-auto'>
@@ -38,9 +42,24 @@ const Technology = () => {
                         <BodyText addClass={'desktop:w-[60%] text-center desktop:text-left'} text={description}/>
                     </div>
                     <div className='flex desktop:flex-col justify-start gap-8 dots'>
-                        <TechTab text={'1'} onTabClick={() => getItem('Launch vehicle')} addClass={name === 'Launch vehicle' ? 'techTabActive' : ''}/>
-                        <TechTab text={'2'} onTabClick={() => getItem('Spaceport')} addClass={name === 'Spaceport' ? 'techTabActive' : ''}/>
-                        <TechTab text={'3'} onTabClick={() => getItem('Space capsule')} addClass={name === 'Space capsule' ? 'techTabActive' : ''}/>
+                        <NavLink
+                            to='/technology/launch-vehicle'
+                            className={({isActive}) => isActive ? (tabClasses + ' techTabActive') : tabClasses}
+                            >
+                            1
+                        </NavLink>
+                        <NavLink
+                            to='/technology/spaceport'
+                            className={({isActive}) => isActive ? (tabClasses + ' techTabActive') : tabClasses}
+                            >
+                            2
+                        </NavLink>
+                        <NavLink
+                            to='/technology/space-capsule'
+                            className={({isActive}) => isActive ? (tabClasses + ' techTabActive') : tabClasses}
+                            >
+                            3
+                        </NavLink>
                     </div>
                 </div>
                 <div className='basis-full desktop:max-w-[500px] desktop:max-h-[500px]'>

@@ -5,7 +5,7 @@ import './styles/navigation.scss';
 import IconHumburger from '../../assets/shared/icon-hamburger';
 import IconClose from '../../assets/shared/icon-close';
 
-const Navigation = ({onChangeCurrentTab}) => {
+const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const LOCATION = useLocation().pathname;
 
@@ -24,7 +24,6 @@ const Navigation = ({onChangeCurrentTab}) => {
                         to='/'
                         className={({isActive}) => isActive ? (tabClasses + ' active') : tabClasses} 
                         onClick={() => {
-                            onChangeCurrentTab('home');
                             setMenuOpen(false);
                             document.body.classList.remove('handleOverflow');
                         }}>
@@ -37,7 +36,6 @@ const Navigation = ({onChangeCurrentTab}) => {
                         to='/destination/moon'
                         className={LOCATION.includes('destination') ? (tabClasses + ' active') : tabClasses} 
                         onClick={() => {
-                            onChangeCurrentTab('destination');
                             setMenuOpen(false);
                             document.body.classList.remove('handleOverflow');
                         }}>
@@ -50,7 +48,6 @@ const Navigation = ({onChangeCurrentTab}) => {
                         to='/crew/douglas-hurley'
                         className={LOCATION.includes('crew') ? (tabClasses + ' active') : tabClasses} 
                         onClick={() => {
-                            onChangeCurrentTab('crew');
                             setMenuOpen(false);
                             document.body.classList.remove('handleOverflow');
                         }}>
@@ -63,7 +60,6 @@ const Navigation = ({onChangeCurrentTab}) => {
                         to='/technology/launch-vehicle'
                         className={LOCATION.includes('technology') ? (tabClasses + ' active') : tabClasses} 
                         onClick={() => {
-                            onChangeCurrentTab('technology');
                             setMenuOpen(false);
                             document.body.classList.remove('handleOverflow');
                         }}>
