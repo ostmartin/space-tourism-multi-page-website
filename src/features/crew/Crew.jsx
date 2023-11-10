@@ -1,13 +1,13 @@
-import { useCallback, useState, useEffect } from 'react';
-
 import { Heading, BodyText, Dots } from '../../ui';
 
 import DATA from '../../data.json';
+import { getData, capitalizeFirstLetter } from '../../service';
 
 import Commander from '../../assets/images/crew/image-douglas-hurley.png';
 import Specialist from '../../assets/images/crew/image-mark-shuttleworth.png';
 import Pilot from '../../assets/images/crew/image-victor-glover.png';
 import Engineer from '../../assets/images/crew/image-anousheh-ansari.png';
+import { useLoaderData } from 'react-router-dom';
 
 const CREW_IMGS = {
     'Douglas Hurley': Commander,
@@ -16,19 +16,16 @@ const CREW_IMGS = {
     'Anousheh Ansari': Engineer
 }
 
+export const loader = async ({params}) => {
+    const item = params.memberId.split('-').map(word => capitalizeFirstLetter(word)).join(' ')
+    
+    return getData(item, 'crew');
+}
+
 const Crew = () => {
-    const [currentMember, setCurrentMember] = useState(null);
+    const currentMember = useLoaderData();
 
     const crewList = DATA.crew.map(member => member.name);
-
-    const getMember = useCallback((newMember) => {
-        const curMember = DATA.crew.find(member => member.name === newMember);
-        setCurrentMember(curMember);
-    }, [])
-    
-    useEffect(() => {
-        getMember(crewList[0]);
-    }, [])
 
     if (!currentMember) {
         return (
@@ -52,7 +49,7 @@ const Crew = () => {
                         <BodyText addClass={'mobile:text-[15px] tablet:max-w-[70%] mx-auto desktop:mx-0'} text={bio}/>
                     </div>
                     <div className='flex flex-row gap-8 w-fit'>
-                        <Dots count={4} onDotClick={getMember} itemsList={crewList} current={currentMember.name}/>
+                        <Dots count={4} itemsList={crewList} current={currentMember.name}/>
                     </div>
                 </div>
                 <div className='mobile:border-b-grey mobile:border-b-[1px] mobile:h-[310px] desktop:w-1/2 mobile:flex mobile:items-end'>

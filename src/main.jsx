@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { loader as destinationsLoader } from './features/destination/Destination';
+import { loader as crewLoader } from './features/crew/Crew';
 
 import {
   MainPage,
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'crew/:memberId',
-        element: <Crew/>
+        element: <Crew/>,
+        loader: crewLoader
       },
       {
         path: 'technology/:techId',

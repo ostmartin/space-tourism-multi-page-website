@@ -1,9 +1,7 @@
 import { NavLink, useLoaderData } from 'react-router-dom';
 
-import { Tab } from '../../ui';
+import { getData } from '../../service';
 import PlanetDescription from './PlanetDescription';
-
-import DATA from '../../data.json';
 
 import Moon from '../../assets/images/destination/image-moon.png';
 import Mars from '../../assets/images/destination/image-mars.png';
@@ -17,14 +15,9 @@ const PLANETS_IMGS = {
     'Titan': Titan
 }
 
-const getData = async (item, segment, data) => {
-    const currentItem = data[segment].find(entry => entry.name === item);
-    return await currentItem;
-}
-
 export const loader = async ({params}) => {
     const item = params.planetId.charAt(0).toUpperCase() + params.planetId.slice(1);
-    const planet = await getData(item, 'destinations', DATA);
+    const planet = await getData(item, 'destinations');
     return planet;
 }
 
