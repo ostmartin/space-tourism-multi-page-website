@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import './styles/navigation.scss';
 import IconHumburger from '../../assets/shared/icon-hamburger';
@@ -7,15 +7,14 @@ import IconClose from '../../assets/shared/icon-close';
 
 const Navigation = ({onChangeCurrentTab}) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const LOCATION = useLocation().pathname;
 
     const toggleBurgerMenu = () => {
         setMenuOpen(!menuOpen);
         document.body.classList.toggle('handleOverflow');
     }
 
-    const tabs = ['', 'destination', 'crew', 'technology'];
-
-    const classes = 'flex gap-2 py-9 px-5 text-h16 tracking-2.7 font-barl text-light uppercase cursor-pointer relative afterTab'
+    const tabClasses = 'flex gap-2 py-9 px-5 text-h16 tracking-2.7 font-barl text-light uppercase cursor-pointer relative afterTab'
 
     return (
         <div className='nav container h-full w-fit tablet:relative z-10'>
@@ -23,7 +22,7 @@ const Navigation = ({onChangeCurrentTab}) => {
                 <li>
                     <NavLink 
                         to='/'
-                        className={({isActive, isPending}) => isActive ? (classes + ' active') : classes} 
+                        className={({isActive}) => isActive ? (tabClasses + ' active') : tabClasses} 
                         onClick={() => {
                             onChangeCurrentTab('home');
                             setMenuOpen(false);
@@ -36,7 +35,7 @@ const Navigation = ({onChangeCurrentTab}) => {
                 <li>
                     <NavLink 
                         to='/destination/moon'
-                        className={({isActive, isPending}) => isActive ? (classes + ' active') : classes} 
+                        className={LOCATION.includes('destination') ? (tabClasses + ' active') : tabClasses} 
                         onClick={() => {
                             onChangeCurrentTab('destination');
                             setMenuOpen(false);
@@ -49,7 +48,7 @@ const Navigation = ({onChangeCurrentTab}) => {
                 <li>
                     <NavLink 
                         to='/crew/douglas-hurley'
-                        className={({isActive, isPending}) => isActive ? (classes + ' active') : classes} 
+                        className={LOCATION.includes('crew') ? (tabClasses + ' active') : tabClasses} 
                         onClick={() => {
                             onChangeCurrentTab('crew');
                             setMenuOpen(false);
@@ -62,7 +61,7 @@ const Navigation = ({onChangeCurrentTab}) => {
                 <li>
                     <NavLink 
                         to='/technology/launch-vehicle'
-                        className={({isActive, isPending}) => isActive ? (classes + ' active') : classes} 
+                        className={LOCATION.includes('technology') ? (tabClasses + ' active') : tabClasses} 
                         onClick={() => {
                             onChangeCurrentTab('technology');
                             setMenuOpen(false);

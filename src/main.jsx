@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { loader as destinationsLoader } from './features/destination/Destination';
 
 import {
   MainPage,
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'destination/:planetId',
-        element: <Destination/>
+        element: <Destination/>,
+        loader: destinationsLoader
       },
       {
         path: 'crew/:memberId',
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <RouterProvider router={router}/>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

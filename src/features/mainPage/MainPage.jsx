@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 import Background from '../../ui/Background';
 
 import Logo from '../../assets/shared/logo';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
 const MainPage = () => {
     const [curTab, setCurTab] = useState('home');
@@ -19,9 +19,9 @@ const MainPage = () => {
             <Background image={curTab}/>
             <div className='container w-full flex flex-row justify-between items-center desktop:pt-10 mobile:pt-10 max-w-[1440px] mx-auto relative'>
                 <div className='ps-6 mobile:scale-75 tablet:ps-8 desktop:ps-14 flex justify-center flex-col'>
-                    <a href="#">
+                    <Link to='/' onClick={() => onChangeCurrentTab('home')}>
                         <Logo/>
-                    </a>
+                    </Link>
                 </div>
                 <Navigation onChangeCurrentTab={onChangeCurrentTab} curTab={curTab}/>
             </div>
